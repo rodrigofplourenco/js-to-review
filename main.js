@@ -95,3 +95,24 @@ document.querySelector('#array-desestruturacao-rest').innerText = rest;
 const [, , num3, , num5, ...restoo] = array; // Como vê, so deixar vazio e colocar mais uma ,
 document.querySelector('#array-desestruturacao-pulando').innerText = JSON.stringify({ num3, num5, restoo });
 
+// -----------------------------------------------------------------------------------------
+
+// Short Syntax Object
+
+const nick = "rodrigofplourenco";
+const money = 1000;
+
+// suponha que quer criar um objeto com os valores acima, qual seria a maneira mais usada?
+const jogador = {
+  nick: nick,
+  money: money
+}
+document.querySelector('#short').innerText = JSON.stringify(jogador);
+
+// nestes casos podemos usar a short syntax já que o nome da chave será igual ao nome da variável, que ficaria:
+const player = {
+  nick,
+  money
+}
+document.querySelector('#short').innerText = JSON.stringify(player);
+

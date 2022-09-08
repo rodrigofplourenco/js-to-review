@@ -33,3 +33,8 @@ document.querySelector('#keys').innerText = Object.keys(user);
 
 // Object.values é usado para obter um vetor com todos os valores do nosso objeto
 document.querySelector('#values').innerText = Object.values(user);
+
+// Como vimos no Object.values ele retorna "[object Object]"quando temos um objeto
+// dentro de outro objeto, nesse caso, uma boa prática é converter para JSON com
+// JSON.stringify 
+document.querySelector('#stringify').innerText = JSON.stringify(Object.values(user));

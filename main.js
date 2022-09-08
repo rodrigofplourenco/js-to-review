@@ -38,3 +38,8 @@ document.querySelector('#values').innerText = Object.values(user);
 // dentro de outro objeto, nesse caso, uma boa prática é converter para JSON com
 // JSON.stringify 
 document.querySelector('#stringify').innerText = JSON.stringify(Object.values(user));
+
+// Object.entries é usado para obter um vetor com todas as chaves e valores do nosso objeto
+// no caso, ele vai ter 2 posiçoes em cada vetor, uma para chave e outra para valor, exemplo:
+// [["name","John Doe"],["age",18],["address",{"street":"NYC","number":1}]]
+document.querySelector('#entries').innerText = JSON.stringify(Object.entries(user));

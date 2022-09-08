@@ -43,3 +43,29 @@ document.querySelector('#stringify').innerText = JSON.stringify(Object.values(us
 // no caso, ele vai ter 2 posiçoes em cada vetor, uma para chave e outra para valor, exemplo:
 // [["name","John Doe"],["age",18],["address",{"street":"NYC","number":1}]]
 document.querySelector('#entries').innerText = JSON.stringify(Object.entries(user));
+
+// Desestruturação de objetos (obter apenas algumas partes de um objeto)
+// a forma mais comum seria:
+// const address = user.address; 
+
+// mas como fariamos isso de maneira mais simples e com a possibilidade de pegar vários valores?
+// usamos a desestruturação:
+const { name, address } = user;
+document.querySelector('#desestruturacao').innerText = JSON.stringify({ name, address });
+
+// e tambem tem como mudarmos o nome das variaveis na desestruturação, como? simples!
+const { name: nome, address: endereço } = user;
+document.querySelector('#desestruturacao').innerText = JSON.stringify({ nome, endereço });
+
+// não acaba por aqui, também conseguimos definir um 'default value', caso um valor não exista
+// caso ele exista, irá mostrar o valor original
+const { name: namee = 'Rodrigo', nickname = 'rodrigofplourenco' } = user;
+document.querySelector('#desestruturacao-default').innerText = JSON.stringify({ namee, nickname });
+
+// a desestruturação pode ser usada em qualquer lugar que trabalhe com objetos, até mesmo funçoes!
+// function mostrarIdade(user) ficaria:
+function mostrarIdade({ age }) { 
+  return age;
+}
+
+document.querySelector('#desestruturacao-funcoes').innerText = mostrarIdade(user);

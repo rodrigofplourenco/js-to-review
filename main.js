@@ -30,3 +30,6 @@ document.querySelector('#in').innerText = ('name' in user);
 
 // Object.keys é usado para obter um vetor com todas as chaves do nosso objeto
 document.querySelector('#keys').innerText = Object.keys(user);
+
+// Object.values é usado para obter um vetor com todos os valores do nosso objeto
+document.querySelector('#values').innerText = Object.values(user);

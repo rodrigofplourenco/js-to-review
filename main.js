@@ -11,3 +11,20 @@ document.querySelector('#or').innerText = 'Sua idade é: ' + (idade || 'Não inf
 // , irá apenas detetar valores que realmente não são válidos como null, undefined, NaN
 document.querySelector('#nullish').innerText = 'Sua idade é: ' + (idade ?? 'Não informado');
 
+// -----------------------------------------------------------------------------------------
+
+// Objetos
+
+const user = {
+  name: 'John Doe',
+  age: 18,
+  address: {
+    street: 'NYC',
+    number: 1
+  }
+};
+
+// IN operator, é usado para checar se existe uma chave num objeto, no caso
+// existe 'name' no objeto user, caso troque name para algo que não existe, dará false
+document.querySelector('#in').innerText = ('name' in user);
+

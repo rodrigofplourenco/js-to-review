@@ -63,9 +63,35 @@ const { name: namee = 'Rodrigo', nickname = 'rodrigofplourenco' } = user;
 document.querySelector('#desestruturacao-default').innerText = JSON.stringify({ namee, nickname });
 
 // a desestruturação pode ser usada em qualquer lugar que trabalhe com objetos, até mesmo funçoes!
-// function mostrarIdade(user) ficaria:
+// function mostrarIdade(user) { return user.age } ficaria:
 function mostrarIdade({ age }) { 
   return age;
 }
-
 document.querySelector('#desestruturacao-funcoes').innerText = mostrarIdade(user);
+
+// -----------------------------------------------------------------------------------------
+
+// REST Operator
+
+// o REST operator (...) é usado para pegar o resto que falta que não foi pego na desestruturaçao
+// exemplo, vou pegar o name do user e quero pegar tudo o resto e colocar na variavel "resto"
+const { name: name3, age, ...resto } = user;
+
+document.querySelector('#rest').innerText = JSON.stringify(resto);
+
+// e caso eu queira trabalhar com desestruturação com arrays, funciona exatamente da mesma forma
+// excepto que tem que usar [] em vez de {}, exemplo:
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+const [num1, num2] = array;
+
+document.querySelector('#array-desestruturacao').innerText = JSON.stringify({ num1, num2 });
+
+// e consecutivamente, conseguimos usar o REST da mesma forma!
+const [num01, num02, ...rest] = array;
+document.querySelector('#array-desestruturacao-rest').innerText = rest;
+
+// e caso eu queira pegar apenas o index 2 e 4 e ignorar o 0 e 1, é possivel com desestruturacao?
+// claro!
+const [, , num3, , num5, ...restoo] = array; // Como vê, so deixar vazio e colocar mais uma ,
+document.querySelector('#array-desestruturacao-pulando').innerText = JSON.stringify({ num3, num5, restoo });
+
